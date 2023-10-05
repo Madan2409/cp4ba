@@ -48,6 +48,7 @@
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sum">
                 <input bomType="ClientInformation" collection="false" name="Client"/>
+                <input bomType="ServiceRequest" collection="false" name="Services"/>
                 <output bomType="java.lang.Long" collection="false" name="Score"/>
                 <rule defaultRule="false" href="node_3/revenue%20score.dmt" kind="DecisionTable" name="revenue score"/>
                 <rule defaultRule="false" href="node_3/size%20score.dmt" kind="DecisionTable" name="size score"/>
@@ -59,6 +60,9 @@
         <variable id="node_3_ii" name="Score" typeRef="java.lang.Long"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
         </informationRequirement>
     </decision>
     <decision id="node_5" name="Complementary services">
